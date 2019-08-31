@@ -1,12 +1,3 @@
-/*  StarSimulation was written to utilize any 128x64 display. I was inspired by past versions of 
- *  MicroSoft Windows screen savers of the Starfield Simulation. Please feel free to modify and share
- *  this code for any 128x64 LCD or OLED. StarSimulation sketch was written for use with I2C SH1106.
- *  This code must be modified to work with other display devices. This code was written with (50) stars
- *  and may use upto 200 stars with an UNO R3.
- *  
- *  This code was written entirely by Greg Stievenart with no claim to or any images or information 
- *  provided in this code. Freely published June 21, 2016.
- */
 #include <LowPower.h>
 #include <avr/sleep.h>
 #include <avr/power.h>
