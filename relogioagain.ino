@@ -798,7 +798,7 @@ int temp = 50;
 
 bool disp= 0;
 
-int m2, mu=0,md=0;                          //Declaramos las variables que vamos a usar
+int m2, mu=0,md=0;                         
 int s2, su=0,sd=0;
 int l, lu=0,ld=0,lc=0;
 int pulsador,antes,despues;
@@ -844,7 +844,7 @@ void setup() {
  digitalWrite(12, LOW);
  
   DS1307.begin();
-  antes=HIGH;                             //Ponemos la variable antes a HIGH
+  antes=HIGH;                            
   despues=HIGH; 
 }
 
@@ -1781,26 +1781,26 @@ if(botao2 ==1){
     md = 0;
                  
   }
-  despues=digitalRead(mais);                 //Guardamos en la variable despues el valor del pin6 (sensor start/stop)
-  if(despues==LOW&&antes==HIGH){          //Si el valor que tenia era HIGH y ahora tiene LOW sera porque lo hemos activado
-           beep(15,100);         //Mandamos una señal PWM con valor 100 al pin 10 (zumbador)
-    inicio=millis();                      //Guardamos en inicio el tiempo que se lleva ejecutando el programa hasta que
-                                          //se activa el sensor start/stop
-    antes=despues;                        //cambiamos el valor de la variable antes al que tiene la variable despues
-    pulsador=0;                           //Ponemos la variable pulsador a 0
-                              //Establecemos un retardo de 200ms
+  despues=digitalRead(mais);                
+  if(despues==LOW&&antes==HIGH){          
+           beep(15,100);        
+    inicio=millis();                      
+                                          
+    antes=despues;                       
+    pulsador=0;                           
+                             
      
-    while(pulsador==0){                   //Cuando la variable pulsador sea 0
-      tiempo=millis()-inicio;            //Calculamos el tiempo que paso desde que se activo el sensor start/stop
-      m2=(tiempo/1000)/60;                 //Calculamos los minutos
-      mu=m2%10;                            //Descomponemos los minutos y sacamos el valor de las unidades
-      md=(m2-mu)/10;                       //Descomponemos los minutos y sacamos el valor de las decenas
-      s2=(tiempo/1000)%60;                 //Calculamos los segundos
-      su=s2%10;                            //Descomponemos los segundos y sacamos el valor de las unidades
-      sd=(s2-su)/10;                       //Descomponemos los segundos y sacamos el valor de las decenas
-      l=(tiempo%1000);                    //Calculamos las milesimas de segundo
-      lu=l%10;                            //Descomponemos las milesimas y sacamos el valor de las unidades
-      ld=((l-lu)/10)%10;                  //Descomponemos las milesimas y sacamos el valor de las decenas
+    while(pulsador==0){                   
+      tiempo=millis()-inicio;           
+      m2=(tiempo/1000)/60;                 
+      mu=m2%10;                           
+      md=(m2-mu)/10;                      
+      s2=(tiempo/1000)%60;                 
+      su=s2%10;                           
+      sd=(s2-su)/10;                       
+      l=(tiempo%1000);                    
+      lu=l%10;                            
+      ld=((l-lu)/10)%10;                  
       lc=(l-(ld*10)-lu)/100; 
      
    display.clearDisplay();
@@ -2141,4 +2141,4 @@ double GetTemp(void)
   return (temperatura);
 }
 
-ISR(INT1_vect) { } // Vibration switch wakeup interrupt
+ISR(INT1_vect) { } 
